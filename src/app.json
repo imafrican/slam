@@ -18,22 +18,22 @@
     "borderStyle": "white",
 
     "list": [{
-      "text": "首页",
+      "text": "赛事",
       "pagePath": "pages/matches/main",
       "iconPath": "static/tabs/1.png",
       "selectedIconPath": "static/tabs/1.png"
     }, {
-      "text": "订单",
+      "text": "数据",
       "pagePath": "pages/datas/main",
-      "iconPath": "static/tabs/2.png",
-      "selectedIconPath": "static/tabs/2.png"
-    }, {
-      "text": "订单",
-      "pagePath": "pages/playoffs/main",
       "iconPath": "static/tabs/3.png",
       "selectedIconPath": "static/tabs/3.png"
     }, {
-      "text": "订单",
+      "text": "季后赛",
+      "pagePath": "pages/playoffs/main",
+      "iconPath": "static/tabs/6.png",
+      "selectedIconPath": "static/tabs/6.png"
+    }, {
+      "text": "我的",
       "pagePath": "pages/mine/main",
       "iconPath": "static/tabs/4.png",
       "selectedIconPath": "static/tabs/4.png"
