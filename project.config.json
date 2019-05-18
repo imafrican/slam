@@ -9,7 +9,7 @@
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},
-	"cloudefouctionRoot":"/functions/",
+	"cloudfouctionRoot":"/functions/",
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wxbe8bc49afb94833d",
