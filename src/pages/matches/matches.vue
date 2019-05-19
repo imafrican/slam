@@ -15,9 +15,11 @@
         <view slot="content">{{item.introduction}}</view>
       </i-card>
     </view>
-    <div>
-     <view class="img" style="background-image: url(/static/tabs/1.png)"></view>
-    </div>
+    <view class="img" style="background-image: url(/static/tabs/1.png)"></view>
+    <i-panel title="标题">
+    <view style="padding: 15px;"><img src="cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px"><img src="cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px"></view>
+    </i-panel>
+    <rich-text :nodes="nodes" bindtap="tap"></rich-text>
   </div>
 </template>
 
@@ -26,6 +28,18 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      nodes: [{
+        name: 'div',
+        attrs: {
+          class: 'div_class',
+          style: 'line-height: 60px; color: red;'
+        },
+        children: [{
+          type: 'text',
+          img: 'cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px',
+          text: '    &emsp;&emsp;Hello&emsp;World!'
+        }]
+      }],
       current: 'tab1',
       notice: '2018-2019季后赛',
       grids: ['赛程', '我的球队'],
@@ -37,6 +51,9 @@ export default {
     card
   },
   methods: {
+    tap () {
+      console.log('tap')
+    },
     handleChange ({ detail }) {
       this.setData({
         current: detail.key

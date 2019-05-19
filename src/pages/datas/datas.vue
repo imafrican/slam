@@ -5,11 +5,11 @@
       :autoplay="autoplay"
       :interval="interval"
       :duration="duration"
-      style="height:200px"
+      style="height:150px"
     >
     <block v-for="item in imgUrls" :key="item">
       <swiper-item>
-        <image :src="item" style="width:100%;height:80%;" />
+        <image :src="item" style="width:100%;height:100%;" />
       </swiper-item>
     </block>
     </swiper>
