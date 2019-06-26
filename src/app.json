@@ -17,7 +17,7 @@
     "borderStyle": "black",
 
     "list": [{
-      "text": "赛事",
+      "text": "球队",
       "pagePath": "pages/matches/main",
       "iconPath": "static/tabs/1.png",
       "selectedIconPath": "static/tabs/1.png"

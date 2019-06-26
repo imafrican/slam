@@ -10,7 +10,7 @@
       :autoplay="autoplay"
       :interval="interval"
       :duration="duration"
-      style="height:150px"
+      style="height:200px"
     >
     <block v-for="item in imgUrls" :key="item">
       <swiper-item>
@@ -43,9 +43,13 @@ export default {
   data () {
     return {
       notice: '2018-2019季后赛',
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000,
       imgUrls: [
-        'cloud://southafrica.736f-southafrica/2.jpg',
         'cloud://southafrica.736f-southafrica/3.jpg',
+        'cloud://southafrica.736f-southafrica/2.jpg',
         'cloud://southafrica.736f-southafrica/4.jpg'
       ],
       grids: [
@@ -64,7 +68,7 @@ export default {
       mpvue.navigateTo({ url })
     },
     goType (type) {
-      let url = '../list/main?type=' + type
+      let url = '../east/main?type=' + type
       mpvue.navigateTo({ url })
     },
     tap () {
