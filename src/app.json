@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/matches/main",
-    "pages/datas/main",
     "pages/playoffs/main",
     "pages/mine/main"
   ],
@@ -22,12 +21,7 @@
       "pagePath": "pages/matches/main",
       "iconPath": "static/tabs/1.png",
       "selectedIconPath": "static/tabs/1.png"
-    }, {
-      "text": "数据",
-      "pagePath": "pages/datas/main",
-      "iconPath": "static/tabs/3.png",
-      "selectedIconPath": "static/tabs/3.png"
-    }, {
+    },{
       "text": "季后赛",
       "pagePath": "pages/playoffs/main",
       "iconPath": "static/tabs/6.png",

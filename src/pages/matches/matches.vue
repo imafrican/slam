@@ -1,25 +1,39 @@
 <template>
   <div>
     
-    <i-tabs :current="current" color="#2b85e" bindchange="handleChange">
-     <i-tab key="tab1" title="赛事"></i-tab>
-     <i-tab key="tab2" title="我的球队"></i-tab>
-    </i-tabs>
-    
     <i-notice-bar v-if='show' icon="systemprompt" loop>
      {{notice}}
     </i-notice-bar>
+    
+    <swiper
+      :indicator-dots="indicatorDots"
+      :autoplay="autoplay"
+      :interval="interval"
+      :duration="duration"
+      style="height:150px"
+    >
+    <block v-for="item in imgUrls" :key="item">
+      <swiper-item>
+        <image :src="item" style="width:100%;height:100%;" />
+      </swiper-item>
+    </block>
+    </swiper>
+
+    <i-grid>
+      <i-grid-item @click="goList(item.url)" v-for="item in grids" :key="item">
+         <i-grid-icon>
+              <image :src="item.img" />
+          </i-grid-icon>
+          <i-grid-label >{{item.type}}</i-grid-label>
+      </i-grid-item>
+  </i-grid>
 
     <view v-for="item in basketballteams" :key='item' class="top-padding">
       <i-card :title="item.name" :extra="item.score" thumb="cloud://southafrica.736f-southafrica/rocket.jpg">
         <view slot="content">{{item.introduction}}</view>
       </i-card>
     </view>
-    <view class="img" style="background-image: url(/static/tabs/1.png)"></view>
-    <i-panel title="标题">
-    <view style="padding: 15px;"><img src="cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px"><img src="cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px"></view>
-    </i-panel>
-    <rich-text :nodes="nodes" bindtap="tap"></rich-text>
+   
   </div>
 </template>
 
@@ -28,21 +42,16 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      nodes: [{
-        name: 'div',
-        attrs: {
-          class: 'div_class',
-          style: 'line-height: 60px; color: red;'
-        },
-        children: [{
-          type: 'text',
-          img: 'cloud://southafrica.736f-southafrica/rocket.jpg" style="width:50px;height:50px',
-          text: '    &emsp;&emsp;Hello&emsp;World!'
-        }]
-      }],
-      current: 'tab1',
       notice: '2018-2019季后赛',
-      grids: ['赛程', '我的球队'],
+      imgUrls: [
+        'cloud://southafrica.736f-southafrica/2.jpg',
+        'cloud://southafrica.736f-southafrica/3.jpg',
+        'cloud://southafrica.736f-southafrica/4.jpg'
+      ],
+      grids: [
+        {type: '东部球队', img: 'cloud://southafrica.736f-southafrica/east.jpg', url: '../east/main?type=1'},
+        {type: '西部球队', img: 'cloud://southafrica.736f-southafrica/west.png', url: '../west/main?type=2'}
+      ],
       basketballteams: [],
       show: true
     }
@@ -51,17 +60,15 @@ export default {
     card
   },
   methods: {
+    goList (url) {
+      mpvue.navigateTo({ url })
+    },
+    goType (type) {
+      let url = '../list/main?type=' + type
+      mpvue.navigateTo({ url })
+    },
     tap () {
       console.log('tap')
-    },
-    handleChange ({ detail }) {
-      this.setData({
-        current: detail.key
-      })
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
     }
   },
   created () {
