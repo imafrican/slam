@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "季后赛",
-    "usingComponents": {
-        "i-row": "../../../static/dist/row/index",
-        "i-col": "../../../static/dist/col/index"
-    }
-    }

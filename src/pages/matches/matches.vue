@@ -29,8 +29,9 @@
   </i-grid>
 
     <view v-for="item in basketballteams" :key='item' class="top-padding">
-      <i-card :title="item.name" :extra="item.score" thumb="cloud://southafrica.736f-southafrica/rocket.jpg">
+      <i-card   @click="goList(item.url)" :title="item.name" :extra="item.score" :thumb="item.img">
         <view slot="content">{{item.introduction}}</view>
+        <view slot="content">{{item.type}}</view>
       </i-card>
     </view>
    
@@ -56,7 +57,8 @@ export default {
         {type: '东部球队', img: 'cloud://southafrica.736f-southafrica/east.jpg', url: '../east/main?type=1'},
         {type: '西部球队', img: 'cloud://southafrica.736f-southafrica/west.png', url: '../west/main?type=2'}
       ],
-      basketballteams: [],
+      basketballteams: [
+      ],
       show: true
     }
   },
