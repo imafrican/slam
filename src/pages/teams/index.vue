@@ -1,10 +1,9 @@
 <template>
   <div>
-    <i-panel title="东部排名">
+    <i-panel title="球队阵容">
       <view>
         <i-card i-class="split" v-for="item in recommand" :key="item" :extra="item.name" :thumb="item.img">
-            <view slot="content">胜场：{{item.win}}  败场：{{item.lose}}</view>
-            <view slot="footer">排名：{{item.Ranking}}</view>
+            <view slot="content">场均得分：{{item.score}}  篮板：{{item.rebotes}}  助攻:{{item.assist}}</view>
         </i-card>
       </view>
     </i-panel>
@@ -27,7 +26,4 @@ export default {
 }
 </script>
 <style scoped>
-div >>> .split {
-  margin-bottom: 10pt;
-}
 </style>

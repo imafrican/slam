@@ -29,7 +29,7 @@
   </i-grid>
 
     <view v-for="item in basketballteams" :key='item' class="top-padding">
-      <i-card   @click="goList(item.url)" :title="item.name" :extra="item.score" :thumb="item.img">
+      <i-card   @click="goList(item.url)" :title="item.name" :thumb="item.img">
         <view slot="content">{{item.introduction}}</view>
         <view slot="content">{{item.type}}</view>
       </i-card>
@@ -70,7 +70,7 @@ export default {
       mpvue.navigateTo({ url })
     },
     goType (type) {
-      let url = '../east/main?type=' + type
+      let url = '../team/main?type=' + type
       mpvue.navigateTo({ url })
     },
     tap () {

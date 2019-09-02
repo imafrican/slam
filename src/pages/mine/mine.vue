@@ -7,7 +7,7 @@
     <open-data type="userNickName"></open-data>
     </view>
     <i-cell-group>
-    <i-cell title="我的收藏" is-link url="/pages/logs/main"></i-cell>
+    <i-cell title="我的收藏" is-link url="/pages/team/main?type=3"></i-cell>
     <i-cell title="接收通知">
         <switch slot="footer" checked />
     </i-cell>
@@ -31,14 +31,6 @@ export default {
     card
   },
   methods: {
-    bindViewTap () {
-      const url = '/pages/logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
